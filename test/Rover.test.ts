@@ -24,4 +24,17 @@ describe('Rover', () => {
         rover.right();
         expect(rover.toString()).toBe('0 0 E');
     });
+    it('should move forward and turn left', () => {
+        const rover = new Rover(new Position(0, 0, Direction.N), new Plateau(5, 5));
+        rover.move();
+        rover.left();
+        expect(rover.toString()).toBe('0 1 W');
+    });
+    it('should move forward and turn right', () => {
+        const rover = new Rover(new Position(0, 0, Direction.N), new Plateau(5, 5));
+        rover.move();
+        rover.right();
+        expect(rover.toString()).toBe('0 1 E');
+    });
+
 });

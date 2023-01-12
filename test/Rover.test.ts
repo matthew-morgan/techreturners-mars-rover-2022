@@ -36,5 +36,10 @@ describe('Rover', () => {
         rover.right();
         expect(rover.toString()).toBe('0 1 E');
     });
+    it('should process instructions', () => {
+        const rover = new Rover(new Position(0, 0, Direction.N), new Plateau(5, 5));
+        rover.processInstructions('MMR');
+        expect(rover.toString()).toBe('0 2 E');
+    });
 
 });

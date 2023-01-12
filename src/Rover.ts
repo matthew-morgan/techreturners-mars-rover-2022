@@ -22,4 +22,24 @@ export default class Rover {
     toString(): string {
         return this.position.toString();
     }
+
+    //Processes a string of letters representing the instructions to move the Rover around the Plateau
+    processInstructions(instructions: string): void {
+        for (let i = 0; i < instructions.length; i++) {
+            const instruction = instructions[i];
+            switch (instruction) {
+                case 'L':
+                    this.left();
+                    break;
+                case 'R':
+                    this.right();
+                    break;
+                case 'M':
+                    this.move();
+                    break;
+                default:
+                    throw new Error(`Invalid instruction: ${instruction}`);
+            }
+        }
+    }
 }

@@ -14,5 +14,9 @@ describe('Plateau', () => {
         expect(plateau.contains(6, 5)).toBe(false);
         expect(plateau.contains(5, 6)).toBe(false);
     });
+    it('should return a string representation of the plateau', () => {
+        const plateau = new Plateau(5, 5);
+        expect(plateau.toString()).toBe('5 5');
+    });
 });
 

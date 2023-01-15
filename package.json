@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --silent",
-    "start": "node out/main.js"
+    "start": "node out/main.js",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
   "homepage": "https://github.com/matthew-morgan/techreturners-mars-rover-2022#readme",
   "devDependencies": {
     "@types/jest": "^29.2.5",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.32.0",
     "jest": "^29.3.1",
     "ts-jest": "^29.0.4",
     "typescript": "^4.9.4"

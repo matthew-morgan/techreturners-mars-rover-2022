@@ -1,4 +1,4 @@
-import Plateau  from '../src/Plateau';
+import Plateau from '../src/Plateau';
 
 describe('Plateau', () => {
     it('should contain a point within its bounds', () => {

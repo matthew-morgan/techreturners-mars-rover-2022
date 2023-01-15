@@ -11,7 +11,7 @@ export function validatePlateauSize(plateauSize: string): boolean {
 export function validateRoverPosition(roverPosition: string): boolean {
     const roverPositionArray = roverPosition.split(' ');
     if (roverPositionArray.length !== 3 
-        || !['n','e','s','w'].includes(roverPositionArray[2].toLowerCase())
+        || !['N','E','S','W'].includes(roverPositionArray[2])
         || isNaN(parseInt(roverPositionArray[0]))
         || isNaN(parseInt(roverPositionArray[1]))) {
         return false;

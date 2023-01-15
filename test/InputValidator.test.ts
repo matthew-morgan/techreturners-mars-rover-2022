@@ -18,7 +18,6 @@ describe('InputValidator', () => {
             expect(validateRoverPosition('1 2 S')).toBe(true);
             expect(validateRoverPosition('1 2 E')).toBe(true);
             expect(validateRoverPosition('1 2 W')).toBe(true);
-            expect(validateRoverPosition('1 2 n')).toBe(true);
         });
         it('should return false if the rover position is invalid', () => {
             expect(validateRoverPosition('1 2')).toBe(false);
@@ -27,6 +26,7 @@ describe('InputValidator', () => {
             expect(validateRoverPosition('1 2 NSEW')).toBe(false);
             expect(validateRoverPosition('1 2 NESW')).toBe(false);
             expect(validateRoverPosition('1 2 N S')).toBe(false);
+            expect(validateRoverPosition('1 2 n')).toBe(false);
         });
     });
     describe('validateInstructions', () => {

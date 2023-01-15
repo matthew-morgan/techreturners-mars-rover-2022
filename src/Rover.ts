@@ -3,7 +3,7 @@ import Plateau from './Plateau';
 
 //A unit that moves around on a Plateau and has a Position
 export default class Rover {
-    constructor(public position: Position, public plateau: Plateau, public instructions: string) {}
+    constructor(public position: Position, public plateau: Plateau, public instructions: string) { }
     // Returns true if the given coordinates are within the bounds of the plateau
     move(): boolean {
         const newPosition = this.position.move();
@@ -42,7 +42,7 @@ export default class Rover {
                     this.right();
                     break;
                 case 'm':
-                    if(!this.move()) {
+                    if (!this.move()) {
                         console.log(`Rover cannot move to new position from ${this.position.toString()} and is stopping`);
                         i = instructions.length;
                     }

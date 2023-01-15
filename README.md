@@ -1,7 +1,7 @@
 ![Mars Rover](rover_128.png)
 # Techreturners - Mars Rover Challenge 
 
-The challenge is to create a program that will take a string of commands and move a rover around a grid. The rover can move forward, turn left, and turn right. The rover can also detect when it is at the edge of the grid and stop moving if it detects that it is at the edge of the grid.
+The challenge is to create a program that will take a string of commands and move a rover around a grid. The rover can move forward, turn left, and turn right. The rover can also detect when it is at the edge of the grid and stop moving if it detects that it is at the edge of the grid. Optionally, the rover can wrap around the plateau.
 
 The solution is a Typescript program.
 
@@ -38,10 +38,11 @@ Example execution:
 Enter the size of the plateau: 5 5
 How many rovers are there? 1
 Enter the position of the rover : 0 0 N
-Enter the instructions for the rover: mmm
+Enter the instructions for the rover: MMMMMM
+Should the rovers wrap around the plateau? (y/n) y
 Rover starting at 0 0 N
-Processing instructions mmm
-Rover finished at 0 3 N
+Processing instructions MMMMMM
+Rover finished at 0 0 N
 ```
 
 <a href="https://www.flaticon.com/free-icons/mars-rover" title="mars rover icons">Mars rover icons created by Eucalyp - Flaticon</a>

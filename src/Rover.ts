@@ -3,15 +3,27 @@ import Plateau from './Plateau';
 
 //A unit that moves around on a Plateau and has a Position
 export default class Rover {
-    constructor(public position: Position, public plateau: Plateau, public instructions: string) { }
+    constructor(public position: Position,
+        public plateau: Plateau,
+        public instructions: string,
+        public wrap: boolean) { }
     // Returns true if the given coordinates are within the bounds of the plateau
     move(): boolean {
-        const newPosition = this.position.move();
-        if (this.plateau.contains(newPosition.x, newPosition.y)) {
-            this.position = newPosition;
+        if (!this.wrap) {
+            const newPosition = this.position.move();
+            if (this.plateau.contains(newPosition.x, newPosition.y)) {
+                this.position = newPosition;
+                return true;
+            }
+            return false;
+        }
+        else {
+            const newPosition = this.position.move();
+            if (!this.plateau.contains(newPosition.x, newPosition.y)) {
+                this.position = this.wrapCoordinates(newPosition);
+            }
             return true;
         }
-        return false;
     }
     left(): void {
         this.position = this.position.turnLeft();
@@ -29,6 +41,23 @@ export default class Rover {
         this.processInstructions(this.instructions);
         console.log(`Rover finished at ${this.position.toString()}`);
     }
+
+    wrapCoordinates(currentPosition: Position): Position {
+        let newX = currentPosition.x;
+        let newY = currentPosition.y;
+        if (newX < 0) {
+            newX = this.plateau.width;
+        } else if (newX > this.plateau.width) {
+            newX = 0;
+        }
+        if (newY < 0) {
+            newY = this.plateau.height;
+        } else if (newY > this.plateau.height) {
+            newY = 0;
+        }
+        return new Position(newX, newY, currentPosition.direction);
+    }
+    
 
     //Processes a string of letters representing the instructions to move the Rover around the Plateau
     processInstructions(instructions: string): void {

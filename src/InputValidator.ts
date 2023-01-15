@@ -1,7 +1,7 @@
 export function validatePlateauSize(plateauSize: string): boolean {
     const plateauSizeArray = plateauSize.split(' ');
-    if (plateauSizeArray.length !== 2 
-        || isNaN(parseInt(plateauSizeArray[0])) 
+    if (plateauSizeArray.length !== 2
+        || isNaN(parseInt(plateauSizeArray[0]))
         || isNaN(parseInt(plateauSizeArray[1]))) {
         return false;
     }
@@ -10,8 +10,8 @@ export function validatePlateauSize(plateauSize: string): boolean {
 
 export function validateRoverPosition(roverPosition: string): boolean {
     const roverPositionArray = roverPosition.split(' ');
-    if (roverPositionArray.length !== 3 
-        || !['N','E','S','W'].includes(roverPositionArray[2])
+    if (roverPositionArray.length !== 3
+        || !['N', 'E', 'S', 'W'].includes(roverPositionArray[2])
         || isNaN(parseInt(roverPositionArray[0]))
         || isNaN(parseInt(roverPositionArray[1]))) {
         return false;
@@ -31,6 +31,13 @@ export function validateRoverCount(roverCount: string): boolean {
         || parseInt(roverCount) < 1
         || parseInt(roverCount) > 10
         || !Number.isInteger(parseInt(roverCount))) {
+        return false;
+    }
+    return true;
+}
+
+export function validateWrapping(wrapping: string): boolean {
+    if (!['y', 'n'].includes(wrapping.toLowerCase())) {
         return false;
     }
     return true;

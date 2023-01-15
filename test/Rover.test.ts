@@ -41,5 +41,10 @@ describe('Rover', () => {
         rover.processInstructions('MMR');
         expect(rover.toString()).toBe('0 2 E');
     });
+    it('should not process instructions if it would go off the plateau', () => {
+        const rover = new Rover(new Position(0, 0, Direction.N), new Plateau(5, 5), '');
+        rover.processInstructions('MMMMMMMMMMM');
+        expect(rover.toString()).toBe('0 5 N');
+    });
 
 });

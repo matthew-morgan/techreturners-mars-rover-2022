@@ -24,22 +24,28 @@ export default class Rover {
     }
 
     start(): void {
+        console.log(`Rover starting at ${this.position.toString()}`);
+        console.log(`Processing instructions ${this.instructions}`);
         this.processInstructions(this.instructions);
+        console.log(`Rover finished at ${this.position.toString()}`);
     }
-    
+
     //Processes a string of letters representing the instructions to move the Rover around the Plateau
     processInstructions(instructions: string): void {
         for (let i = 0; i < instructions.length; i++) {
             const instruction = instructions[i];
-            switch (instruction) {
-                case 'L':
+            switch (instruction.toLowerCase()) {
+                case 'l':
                     this.left();
                     break;
-                case 'R':
+                case 'r':
                     this.right();
                     break;
-                case 'M':
-                    this.move();
+                case 'm':
+                    if(!this.move()) {
+                        console.log(`Rover cannot move to new position from ${this.position.toString()} and is stopping`);
+                        i = instructions.length;
+                    }
                     break;
                 default:
                     throw new Error(`Invalid instruction: ${instruction}`);

@@ -32,4 +32,16 @@ The code was written to take input from a command line in a reasonably ergonomic
 
 The code is written in Typescript. The code is compiled to Javascript using the Typescript compiler. The code is tested using Jest.
 
+Example execution:
+
+```console
+Enter the size of the plateau: 5 5
+How many rovers are there? 1
+Enter the position of the rover : 0 0 N
+Enter the instructions for the rover: mmm
+Rover starting at 0 0 N
+Processing instructions mmm
+Rover finished at 0 3 N
+```
+
 <a href="https://www.flaticon.com/free-icons/mars-rover" title="mars rover icons">Mars rover icons created by Eucalyp - Flaticon</a>

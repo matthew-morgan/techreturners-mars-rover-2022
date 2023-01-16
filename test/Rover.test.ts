@@ -76,5 +76,10 @@ describe('Rover', () => {
         rover.processInstructions('MRM');
         expect(rover.toString()).toBe('0 0 E');
     });
+    it('should wrap around the plateau on the x- and y-axis', () => {
+        const rover = new Rover(new Position(5, 5, Direction.N), new Plateau(5, 5), '', true);
+        rover.processInstructions('MRMM');
+        expect(rover.toString()).toBe('1 0 E');
+    });
 
 });

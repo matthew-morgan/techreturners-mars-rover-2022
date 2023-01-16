@@ -22,6 +22,9 @@ export default class Rover {
             if (!this.plateau.contains(newPosition.x, newPosition.y)) {
                 this.position = this.wrapCoordinates(newPosition);
             }
+            else {
+                this.position = newPosition;
+            }
             return true;
         }
     }

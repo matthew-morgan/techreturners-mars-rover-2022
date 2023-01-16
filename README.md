@@ -27,8 +27,7 @@ The code has the following basic structure:
 
 The code is organized into modules.
 
-The code assumes a fixed plateau, which means the rover cannot move outside the plateau.
-The code was written to take input from a command line in a reasonably ergonomic fashion. The code could be modified to take input from a file or from a web page.
+The code was written to take input from a command line. The code could be modified to take input from a file or from a web page.
 
 The code is written in Typescript. The code is compiled to Javascript using the Typescript compiler. The code is tested using Jest.
 
